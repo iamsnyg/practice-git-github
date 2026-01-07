@@ -13,9 +13,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'
 
       - name: Install Tools
-        run: npm install
+        run: npm ci
 
       - name: Check HTML
         run: npm run lint:html
