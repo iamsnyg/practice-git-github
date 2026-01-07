@@ -26,4 +26,4 @@ jobs:
         run: npm run format:check
 
       - name: Lint All Files
-        run: npm run lint
+        run: npm run lint:html && npm run lint:js
