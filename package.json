@@ -8,6 +8,7 @@
     "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
     "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
     "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "setup": "npm install && husky install && echo Setup complete! Pre-commit hooks are active.",
     "prepare": "husky"
   },
   "lint-staged": {
