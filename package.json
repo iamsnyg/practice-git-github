@@ -1,6 +1,7 @@
 {
   "name": "my-web-project",
   "private": true,
+  "type": "module",
   "scripts": {
     "lint:html": "htmlhint \"**/*.html\"",
     "lint:css": "stylelint \"**/*.css\"",
