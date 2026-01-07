@@ -12,6 +12,9 @@
     "setup": "npm install && husky install && echo Setup complete! Pre-commit hooks are active.",
     "prepare": "husky"
   },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
   "lint-staged": {
     "*.html": [
       "prettier --write",
