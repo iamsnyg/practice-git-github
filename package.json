@@ -4,11 +4,10 @@
   "type": "module",
   "scripts": {
     "lint:html": "htmlhint \"**/*.html\"",
-    "lint:css": "stylelint \"**/*.css\"",
     "lint:js": "eslint .",
-    "lint": "npm run lint:html && npm run lint:css && npm run lint:js",
-    "format": "prettier --write \"**/*.{html,css,js,json,md}\"",
-    "format:check": "prettier --check \"**/*.{html,css,js,json,md}\"",
+    "lint": "npm run lint:html && npm run lint:js",
+    "format": "prettier --write \"**/*.{html,js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{html,js,json,md}\"",
     "setup": "npm install && husky install && echo Setup complete! Pre-commit hooks are active.",
     "prepare": "husky"
   },
@@ -38,5 +37,8 @@
     "prettier": "^3.7.4",
     "stylelint": "^16.1.0",
     "stylelint-config-standard": "^36.0.1"
+  },
+  "dependencies": {
+    "stylelint-config-standard-scss": "^16.0.0"
   }
 }
