@@ -1,0 +1,28 @@
+name: Ultra-Fast Quality Check
+
+on: [push, pull_request]
+
+jobs:
+  fast-lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Tools
+        run: npm install
+
+      - name: Check HTML
+        run: npm run lint:html
+
+      - name: Check CSS
+        run: npm run lint:css
+
+      - name: Check JS
+        run: npm run lint:js
