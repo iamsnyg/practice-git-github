@@ -1,0 +1,33 @@
+name: Code Quality Checks
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lint-codebase:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20' # Or your project's required Node.js version
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run ESLint for JavaScript
+      run: npx eslint .
+      # Make sure you have ESLint configured in your project (e.g., .eslintrc.json)
+
+    - name: Run Stylelint for CSS
+      run: npx stylelint "**/*.css"
+      # Make sure you have Stylelint configured in your project (e.g., .stylelintrc.json)
+
+    # You can add steps for HTML validation here using specific actions or CLI tools
